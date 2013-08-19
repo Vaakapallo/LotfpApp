@@ -31,7 +31,7 @@ public class Character {
         this.charClass = charClass;
         this.level = 1;
         this.XP = 0;
-        this.abilityScores = new AbilityScores();
+        this.abilityScores = new AbilityScores(charClass);
         this.savingThrows = new SavingThrows(charClass);
         this.equipment = new Equipment();
     }

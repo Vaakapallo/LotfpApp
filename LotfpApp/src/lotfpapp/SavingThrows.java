@@ -10,7 +10,7 @@ package lotfpapp;
  */
 public class SavingThrows {
 
-    SavingThrows(CharacterClass charClass) {
+    public SavingThrows(CharacterClass charClass) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
