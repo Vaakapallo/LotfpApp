@@ -35,4 +35,9 @@ public class AbilityScoresTest {
         assertEquals(7, AS.getAbilityScore("Charisma"));
     }
     
+    @Test
+    public void canGetCharismaModifier(){
+        AbilityScores AS = new AbilityScores(CharacterClass.Cleric);
+        assertEquals(-1, AS.getModifier("Charisma"));
+    }
 }
