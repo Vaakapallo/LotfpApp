@@ -29,4 +29,10 @@ public class AbilityScoresTest {
         assertEquals(6, AS.getScores().size());
     }
     
+    @Test
+    public void canGetCharisma(){
+        AbilityScores AS = new AbilityScores(CharacterClass.Cleric);
+        assertEquals(7, AS.getAbilityScore("Charisma"));
+    }
+    
 }

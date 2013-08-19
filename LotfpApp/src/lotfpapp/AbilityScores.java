@@ -21,16 +21,20 @@ public class AbilityScores {
     private Map<String, Integer> scores = new HashMap();
 
     public AbilityScores(CharacterClass charClass) {
-        scores.put("Charisma", 7);
-        scores.put("Constitution", 7);
-        scores.put("Dexterity", 7);
-        scores.put("Intelligence", 7);
-        scores.put("Strength", 7);
-        scores.put("Wisdom", 7);
+        scores.put("charisma", 7);
+        scores.put("constitution", 7);
+        scores.put("dexterity", 7);
+        scores.put("intelligence", 7);
+        scores.put("strength", 7);
+        scores.put("wisdom", 7);
         this.charClass = charClass;
     }
 
     public Collection<Integer> getScores() {
         return scores.values();
+    }
+    
+    public int getAbilityScore(String name){
+        return scores.get(name.toLowerCase());
     }
 }
