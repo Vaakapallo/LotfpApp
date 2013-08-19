@@ -4,12 +4,9 @@
  */
 package lotfpapp;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  *
@@ -17,7 +14,7 @@ import java.util.Set;
  */
 public class AbilityScores {
 
-    private CharacterClass charClass;
+    private CharacterClass charClass; // make this matter! In a smart way!
     private Map<String, Integer> scores = new HashMap();
 
     public AbilityScores(CharacterClass charClass) {
