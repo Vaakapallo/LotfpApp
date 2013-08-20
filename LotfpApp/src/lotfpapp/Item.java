@@ -54,4 +54,11 @@ public class Item {
     public void addNote(String note) {
         notes.add(note);
     }
+
+    @Override
+    public String toString() {
+        return "Item{" + "name=" + name + ", price=" + price + ", encumbering=" + encumbering + ", notes=" + notes + '}';
+    }
+    
+    
 }

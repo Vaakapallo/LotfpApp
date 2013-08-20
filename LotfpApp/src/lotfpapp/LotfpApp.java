@@ -4,6 +4,8 @@
  */
 package lotfpapp;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Lassi
@@ -14,6 +16,8 @@ public class LotfpApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Make character!");
+        System.out.println(new Character(scanner.nextLine(), scanner.nextLine(), Alignment.Lawful, Integer.parseInt(scanner.nextLine()), Sex.Male, CharacterClass.Dwarf).toString());
     }
 }

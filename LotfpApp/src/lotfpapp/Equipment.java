@@ -34,6 +34,9 @@ public class Equipment {
     public void addEncumberingItem(String name){
         this.addItem(new Item(name, true));
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Equipment" + items;
+    }
 }

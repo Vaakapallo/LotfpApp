@@ -24,6 +24,11 @@ public class SavingThrows {
         savingThrows.put("magic", 15);
         this.charClass = charClass;
     }
+
+    @Override
+    public String toString() {
+        return "SavingThrows" + savingThrows;
+    }
     
     public int getSavingThrow(String name){
         return savingThrows.get(name);

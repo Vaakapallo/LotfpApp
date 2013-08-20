@@ -36,6 +36,11 @@ public class Character {
         this.equipment = new Equipment();
     }
 
+    @Override
+    public String toString() {
+        return "Character" + "name=" + name + ", player=" + player + ", level=" + level + ", alignment=" + alignment + ", age=" + age + ", sex=" + sex + ", XP=" + XP + ", charClass=" + charClass + ", abilityScores=" + abilityScores + ", savingThrows=" + savingThrows + ", equipment=" + equipment + '}';
+    }
+
     
     
 }
