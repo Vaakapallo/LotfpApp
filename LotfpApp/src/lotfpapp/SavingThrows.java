@@ -25,12 +25,17 @@ public class SavingThrows {
         this.charClass = charClass;
     }
 
-    @Override
-    public String toString() {
-        return "SavingThrows" + savingThrows;
-    }
-    
     public int getSavingThrow(String name){
         return savingThrows.get(name);
+    }
+    
+    @Override
+    public String toString() {
+        String returnable = "Saving Throws: \n";
+        for (String name : savingThrows.keySet()) {
+            returnable += name + " " + savingThrows.get(name)+"\n";
+        }
+        
+        return returnable;
     }
 }

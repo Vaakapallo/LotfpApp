@@ -79,7 +79,7 @@ public class AbilityScores {
         for (String name : scores.keySet()) {
             returnable += name + " " + scores.get(name) + " (" + getModifier(name) + ")\n";
         }
-        returnable += "Total Modifier: " + totalModifierScore();
+        returnable += "Total Modifier: " + totalModifierScore() + "\n";
         return returnable;
     }
 }
