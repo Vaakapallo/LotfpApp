@@ -15,12 +15,12 @@ import java.util.Random;
  */
 public class AbilityScores {
 
-    private CharacterClass charClass; // make this matter! In a smart way!
+    private CharacterClass charClass; // make this matter! In a smart way! If modifiers are a table of their own, the class bonuses are easier.
     private Map<String, Integer> scores = new HashMap();
     private Random random = new Random();
+    private String[] stats = {"charisma","constitution","dexterity","intelligence","strength","wisdom"};
 
     public AbilityScores(CharacterClass charClass) {
-        String[] stats = {"charisma","constitution","dexterity","intelligence","strength","wisdom"};
         for (String string : stats) {
             scores.put(string, randomScore());
         }
@@ -57,8 +57,20 @@ public class AbilityScores {
         }
     }
     
-    private int randomScore(){
-        return random.nextInt(16) + 2;
+    public int randomScore(){
+        int score = 0;
+        for (int i = 0; i < 3; i++) {
+            score += random.nextInt(6) + 1;
+        }
+        return score;
+    }
+    
+    public int totalModifierScore(){
+        int total = 0;
+        for (String string : stats) {
+            total += getModifier(string);
+        }
+        return total;
     }
 
     @Override
@@ -67,6 +79,7 @@ public class AbilityScores {
         for (String name : scores.keySet()) {
             returnable += name + " " + scores.get(name) + " (" + getModifier(name) + ")\n";
         }
+        returnable += "Total Modifier: " + totalModifierScore();
         return returnable;
     }
 }

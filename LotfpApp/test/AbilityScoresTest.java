@@ -32,12 +32,24 @@ public class AbilityScoresTest {
     @Test
     public void canGetCharisma(){
         AbilityScores AS = new AbilityScores(CharacterClass.Cleric);
-        assertEquals(7, AS.getAbilityScore("Charisma"));
+        assertNotNull(AS.getAbilityScore("Charisma"));
     }
     
     @Test
     public void canGetCharismaModifier(){
         AbilityScores AS = new AbilityScores(CharacterClass.Cleric);
         assertEquals(-1, AS.getModifier("Charisma"));
+    }
+    
+    @Test
+    public void randomScoreIsEqualToDiceRolling(){
+        AbilityScores AS = new AbilityScores(CharacterClass.Cleric);
+        int[] scores = new int[19];
+        for (int i = 0; i < 100000; i++) {
+            scores[AS.randomScore()]++;
+        }
+        for (int i = 3; i < 19; i++) {
+            System.out.println("score " + i + "amount " + scores[i]);
+        }
     }
 }
