@@ -38,7 +38,7 @@ public class Character {
 
     @Override
     public String toString() {
-        return "Character" + "name=" + name + ", player=" + player + ", level=" + level + ", alignment=" + alignment + ", age=" + age + ", sex=" + sex + ", XP=" + XP + ", charClass=" + charClass + ", abilityScores=" + abilityScores + ", savingThrows=" + savingThrows + ", equipment=" + equipment + '}';
+        return name + "\n" + "Player: " + player + "\nLevel: " + level + "\nAlignment: " + alignment + "\nAge: " + age + "\nSex: " + sex + "\nXP: " + XP + "\nClass: " + charClass + "\n" + abilityScores.toString() + "\n" + savingThrows.toString() + "\n" + equipment.toString();
     }
 
     

@@ -7,6 +7,7 @@ package lotfpapp;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  *
@@ -16,14 +17,13 @@ public class AbilityScores {
 
     private CharacterClass charClass; // make this matter! In a smart way!
     private Map<String, Integer> scores = new HashMap();
+    private Random random = new Random();
 
     public AbilityScores(CharacterClass charClass) {
-        scores.put("charisma", 7);
-        scores.put("constitution", 7);
-        scores.put("dexterity", 7);
-        scores.put("intelligence", 7);
-        scores.put("strength", 7);
-        scores.put("wisdom", 7);
+        String[] stats = {"charisma","constitution","dexterity","intelligence","strength","wisdom"};
+        for (String string : stats) {
+            scores.put(string, randomScore());
+        }
         this.charClass = charClass;
     }
 
@@ -56,9 +56,17 @@ public class AbilityScores {
             return 3;
         }
     }
+    
+    private int randomScore(){
+        return random.nextInt(16) + 2;
+    }
 
     @Override
     public String toString() {
-        return "Scores=" + scores;
+        String returnable = "Scores: \n";
+        for (String name : scores.keySet()) {
+            returnable += name + " " + scores.get(name) + " (" + getModifier(name) + ")\n";
+        }
+        return returnable;
     }
 }
