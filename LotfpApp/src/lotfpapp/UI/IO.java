@@ -14,6 +14,8 @@ public interface IO {
     
     public String readString();
     
+    public void pressEntertoContinue();
+    
     public void print(String text);
     
     public void print(String ... texts);

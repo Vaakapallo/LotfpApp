@@ -11,7 +11,7 @@ import lotfpapp.Character.Sex;
 import lotfpapp.Character.CharacterClass;
 import lotfpapp.Character.Character;
 import lotfpapp.Character.Alignment;
-import java.util.Scanner;
+import lotfpapp.Commands.Command;
 
 /**
  *
@@ -24,21 +24,25 @@ public class LotfpApp {
      */
     public static void main(String[] args) {
         IO io = new TextIO();
-        
+
         MainMenu menu = new MainMenu(io);
-        io.print(menu.toString());
-        
-        io.print("Make character!");
-        
-        io.print("Character Name:");
-        String character = io.readString();
-        
-        io.print("Player Name");
-        String player = io.readString();
-        
-        io.print("Age");
-        int age = io.readInt();
-        
-        io.print(new Character(character, player, Alignment.Lawful, age, Sex.Male, CharacterClass.Dwarf).toString());
+
+        while (true) {
+            io.print(menu.toString());
+            io.print("Give command");
+            int input = io.readInt();
+            Command com = menu.getCommand(input);
+            if (com != null) {
+                try {
+                    com.run();
+                } catch (UnsupportedOperationException e) {
+                    io.print("Not yet done, working on it");
+                    io.pressEntertoContinue();
+                }
+            } else {
+                io.print("No such command, try again");
+                io.pressEntertoContinue();
+            }
+        }
     }
 }

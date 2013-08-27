@@ -48,4 +48,9 @@ public class TextIO implements IO{
             System.out.println(text);
         }
     }
+
+    @Override
+    public void pressEntertoContinue() {
+        System.out.print("<Press enter to continue>"); scanner.nextLine();
+    }
 }

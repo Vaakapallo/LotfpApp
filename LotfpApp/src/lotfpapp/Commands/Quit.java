@@ -18,7 +18,7 @@ class Quit extends Command {
 
     @Override
     public void run() {
-        io.print("closing down");
+        io.print("Closing down");
         System.exit(0);
     }
 
