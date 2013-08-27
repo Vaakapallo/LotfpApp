@@ -19,7 +19,11 @@ public class ShowStats extends Command {
 
     @Override
     public void run() {
+        try{
         io.pressEntertoContinue(ActiveCharacter.getActiveCharacter().toString());
+        } catch (NullPointerException e){
+            io.print("Make a character first!");
+        }
     }
 
     @Override

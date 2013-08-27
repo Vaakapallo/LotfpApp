@@ -4,6 +4,9 @@
  */
 package lotfpapp.Commands;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 import lotfpapp.ActiveCharacter;
 import lotfpapp.Character.*;
 import lotfpapp.Character.CharacterClass;
@@ -15,6 +18,8 @@ import lotfpapp.UI.IO;
  * @author Lassi
  */
 public class AddCharacter extends Command {
+    
+    private Random random = new Random();
 
     public AddCharacter(IO io) {
         super(io);
@@ -30,10 +35,10 @@ public class AddCharacter extends Command {
         io.print("Player Name");
         String player = io.readString();
 
-        io.print("Age");
-        int age = io.readInt();
+//        io.print("Age");
+//        int age = io.readInt();
 
-        ActiveCharacter.setActiveCharacter(new Char(character, player, Alignment.Lawful, age, Sex.Male, CharacterClass.Dwarf));
+        ActiveCharacter.setActiveCharacter(new Char(character, player, Alignment.Lawful, random.nextInt(200), randomGender(), randomClass()));
 
         io.pressEntertoContinue("Character created");
     }
@@ -41,5 +46,17 @@ public class AddCharacter extends Command {
     @Override
     public String toString() {
         return "Add Character";
+    }
+
+    private CharacterClass randomClass() {
+        CharacterClass[] chars = CharacterClass.values();
+        
+        return chars[random.nextInt(chars.length)];
+    }
+    
+    private Sex randomGender() {
+        Sex[] sexes = Sex.values();
+        
+        return sexes[random.nextInt(sexes.length)];
     }
 }
