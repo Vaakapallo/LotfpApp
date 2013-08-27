@@ -4,14 +4,10 @@
  */
 package lotfpapp;
 
+import lotfpapp.Commands.AddCharacter;
 import lotfpapp.UI.IO;
 import lotfpapp.UI.TextIO;
-import lotfpapp.Commands.MainMenu;
-import lotfpapp.Character.Sex;
-import lotfpapp.Character.CharacterClass;
-import lotfpapp.Character.Character;
-import lotfpapp.Character.Alignment;
-import lotfpapp.Commands.Command;
+import lotfpapp.Commands.*;
 
 /**
  *
@@ -24,8 +20,10 @@ public class LotfpApp {
      */
     public static void main(String[] args) {
         IO io = new TextIO();
-
-        MainMenu menu = new MainMenu(io);
+        
+        Command[] commands = {new AddCharacter(io), new ShowStats(io), new Notes(io), new Encumbrance(io),new Items(io),new Quit(io)};
+        
+        Menu menu = new Menu(commands);
 
         while (true) {
             io.print(menu.toString());

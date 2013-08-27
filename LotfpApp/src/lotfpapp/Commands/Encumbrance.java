@@ -10,7 +10,7 @@ import lotfpapp.UI.IO;
  *
  * @author Lassi
  */
-class Encumbrance extends Command {
+public class Encumbrance extends Command {
 
     public Encumbrance(IO io) {
         super(io);

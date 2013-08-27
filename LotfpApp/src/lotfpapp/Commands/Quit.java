@@ -10,7 +10,7 @@ import lotfpapp.UI.IO;
  *
  * @author Lassi
  */
-class Quit extends Command {
+public class Quit extends Command {
 
     public Quit(IO io) {
         super(io);

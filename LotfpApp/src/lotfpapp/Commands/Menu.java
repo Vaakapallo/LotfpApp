@@ -6,29 +6,27 @@ package lotfpapp.Commands;
 
 import java.util.HashMap;
 import java.util.Map;
-import lotfpapp.UI.IO;
 
 /**
  *
  * @author Lassi
  */
-public class MainMenu {
-
+public class Menu {
+    
     private Map<Integer, Command> commands = new HashMap();
 
-    public MainMenu(IO io) {
-        commands.put(1, new AddCharacter(io));
-        commands.put(2, new ShowStats(io));
-        commands.put(3, new Notes(io));
-        commands.put(4, new Encumbrance(io));
-        commands.put(5, new Items(io));
-        commands.put(9, new Quit(io));
+    public Menu(Command ... coms) {
+        int i = 1;
+        for (Command command : coms) {
+            commands.put(i, command);
+            i++;
+        }
     }
-
+    
     public Command getCommand(int command) {
         return commands.get(command);
     }
-
+    
     @Override
     public String toString() {
         String returnable = "";

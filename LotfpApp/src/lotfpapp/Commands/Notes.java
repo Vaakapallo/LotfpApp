@@ -10,7 +10,7 @@ import lotfpapp.UI.IO;
  *
  * @author Lassi
  */
-class Notes extends Command {
+public class Notes extends Command {
 
     public Notes(IO io) {
         super(io);
