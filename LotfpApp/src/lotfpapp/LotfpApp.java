@@ -16,20 +16,24 @@ public class LotfpApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        IO IO = new TextIO();
-        IO.print("Make character!");
+        IO io = new TextIO();
         
-        IO.print("Character Name:");
-        String character = IO.readString();
+        MainMenu menu = new MainMenu(io);
+        io.print(menu.toString());
         
-        IO.print("Player Name");
-        String player = IO.readString();
+        io.print("Make character!");
         
-        IO.print("Age");
-        int age = IO.readInt();
+        io.print("Character Name:");
+        String character = io.readString();
+        
+        io.print("Player Name");
+        String player = io.readString();
+        
+        io.print("Age");
+        int age = io.readInt();
         
       //  System.out.println(new Character(scanner.nextLine(), scanner.nextLine(), Alignment.Lawful, Integer.parseInt(scanner.nextLine()), Sex.Male, CharacterClass.Dwarf).toString());
-        IO.print(new Character(character, player, Alignment.Lawful, age, Sex.Male, CharacterClass.Dwarf).toString());
+        io.print(new Character(character, player, Alignment.Lawful, age, Sex.Male, CharacterClass.Dwarf).toString());
        
     }
 }
