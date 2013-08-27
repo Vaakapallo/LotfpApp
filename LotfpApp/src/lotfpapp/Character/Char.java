@@ -4,12 +4,14 @@
  */
 package lotfpapp.Character;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Lassi
  */
-public class Character {
-    
+public class Char {
+
     private String name;
     private String player;
     private int level;
@@ -21,8 +23,9 @@ public class Character {
     private AbilityScores abilityScores;
     private SavingThrows savingThrows;
     private Equipment equipment;
+    private ArrayList<String> notes;
 
-    public Character(String name, String player, Alignment alignment, int age, Sex sex, CharacterClass charClass) {
+    public Char(String name, String player, Alignment alignment, int age, Sex sex, CharacterClass charClass) {
         this.name = name;
         this.player = player;
         this.alignment = alignment;
@@ -34,6 +37,7 @@ public class Character {
         this.abilityScores = new AbilityScores(charClass);
         this.savingThrows = new SavingThrows(charClass);
         this.equipment = new Equipment();
+        notes = new ArrayList();
     }
 
     @Override
@@ -41,6 +45,11 @@ public class Character {
         return name + "\n" + "Player: " + player + "\nLevel: " + level + "\nAlignment: " + alignment + "\nAge: " + age + "\nSex: " + sex + "\nXP: " + XP + "\nClass: " + charClass + "\n" + abilityScores.toString() + "\n" + savingThrows.toString() + "\n" + equipment.toString();
     }
 
-    
-    
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<String> getNotes() {
+        return notes;
+    }
 }

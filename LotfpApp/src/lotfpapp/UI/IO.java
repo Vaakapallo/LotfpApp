@@ -13,8 +13,8 @@ public interface IO {
     public int readInt();
     
     public String readString();
-    
-    public void pressEntertoContinue();
+        
+    public void pressEntertoContinue(String text);
     
     public void print(String text);
     

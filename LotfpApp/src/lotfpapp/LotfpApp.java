@@ -4,6 +4,7 @@
  */
 package lotfpapp;
 
+import lotfpapp.Character.Char;
 import lotfpapp.Commands.AddCharacter;
 import lotfpapp.UI.IO;
 import lotfpapp.UI.TextIO;
@@ -20,26 +21,28 @@ public class LotfpApp {
      */
     public static void main(String[] args) {
         IO io = new TextIO();
-        
-        Command[] commands = {new AddCharacter(io), new ShowStats(io), new Notes(io), new Encumbrance(io),new Items(io),new Quit(io)};
-        
+
+        Command[] commands = {new AddCharacter(io), new ShowStats(io), new Notes(io), new Encumbrance(io), new Items(io), new Quit(io)};
+
         Menu menu = new Menu(commands);
 
         while (true) {
             io.print(menu.toString());
-            io.print("Give command");
+            Char character = ActiveCharacter.getActiveCharacter();
+            if (character != null) {
+                io.print("Current Character: " + character.getName());
+            }
+            io.print("Give command:");
             int input = io.readInt();
             Command com = menu.getCommand(input);
             if (com != null) {
                 try {
                     com.run();
                 } catch (UnsupportedOperationException e) {
-                    io.print("Not yet done, working on it");
-                    io.pressEntertoContinue();
+                    io.pressEntertoContinue("Not yet done, working on it");
                 }
             } else {
-                io.print("No such command, try again");
-                io.pressEntertoContinue();
+                io.pressEntertoContinue("No such command, try again");
             }
         }
     }

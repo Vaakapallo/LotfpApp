@@ -4,6 +4,9 @@
  */
 package lotfpapp.Commands;
 
+import java.util.List;
+import lotfpapp.ActiveCharacter;
+import lotfpapp.Character.Char;
 import lotfpapp.UI.IO;
 
 /**
@@ -18,13 +21,24 @@ public class Notes extends Command {
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<String> notes = ActiveCharacter.getActiveCharacter().getNotes();
+
+        if (notes.isEmpty()) {
+            io.print("No old notes");
+        } else {
+            io.print("Old Notes:");
+            for (String string : notes) {
+                io.print(string);
+            }
+        }
+
+        io.print("Add note:");
+        notes.add(io.readString());
+        io.pressEntertoContinue("Note added");
     }
 
     @Override
     public String toString() {
         return "Manage Notes";
     }
-    
-    
 }

@@ -4,6 +4,7 @@
  */
 package lotfpapp.Commands;
 
+import lotfpapp.ActiveCharacter;
 import lotfpapp.UI.IO;
 
 /**
@@ -18,12 +19,12 @@ public class ShowStats extends Command {
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        io.pressEntertoContinue(ActiveCharacter.getActiveCharacter().toString());
     }
 
     @Override
     public String toString() {
-        return "Show Stats";
+        return "Show Character Stats";
     }
     
 }

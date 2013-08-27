@@ -50,7 +50,7 @@ public class TextIO implements IO{
     }
 
     @Override
-    public void pressEntertoContinue() {
-        System.out.print("<Press enter to continue>"); scanner.nextLine();
+    public void pressEntertoContinue(String text) {
+        System.out.print(text + " <Press enter to continue>"); scanner.nextLine();
     }
 }
