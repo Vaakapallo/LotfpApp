@@ -4,6 +4,13 @@
  */
 package lotfpapp;
 
+import lotfpapp.UI.IO;
+import lotfpapp.UI.TextIO;
+import lotfpapp.Commands.MainMenu;
+import lotfpapp.Character.Sex;
+import lotfpapp.Character.CharacterClass;
+import lotfpapp.Character.Character;
+import lotfpapp.Character.Alignment;
 import java.util.Scanner;
 
 /**
@@ -32,8 +39,6 @@ public class LotfpApp {
         io.print("Age");
         int age = io.readInt();
         
-      //  System.out.println(new Character(scanner.nextLine(), scanner.nextLine(), Alignment.Lawful, Integer.parseInt(scanner.nextLine()), Sex.Male, CharacterClass.Dwarf).toString());
         io.print(new Character(character, player, Alignment.Lawful, age, Sex.Male, CharacterClass.Dwarf).toString());
-       
     }
 }

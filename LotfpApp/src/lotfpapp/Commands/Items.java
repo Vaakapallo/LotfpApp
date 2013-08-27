@@ -2,15 +2,17 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lotfpapp;
+package lotfpapp.Commands;
+
+import lotfpapp.UI.IO;
 
 /**
  *
  * @author Lassi
  */
-class Notes extends Command {
+class Items extends Command {
 
-    public Notes(IO io) {
+    public Items(IO io) {
         super(io);
     }
 
@@ -21,8 +23,6 @@ class Notes extends Command {
 
     @Override
     public String toString() {
-        return "Manage Notes";
+        return "Items";
     }
-    
-    
 }

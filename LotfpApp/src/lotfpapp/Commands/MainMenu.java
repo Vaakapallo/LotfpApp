@@ -2,10 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lotfpapp;
+package lotfpapp.Commands;
 
 import java.util.HashMap;
 import java.util.Map;
+import lotfpapp.UI.IO;
 
 /**
  *

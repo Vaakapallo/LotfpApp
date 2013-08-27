@@ -2,15 +2,17 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lotfpapp;
+package lotfpapp.Commands;
+
+import lotfpapp.UI.IO;
 
 /**
  *
  * @author Lassi
  */
-class Encumbrance extends Command {
+public class AddCharacter extends Command {
 
-    public Encumbrance(IO io) {
+    public AddCharacter(IO io) {
         super(io);
     }
 
@@ -21,7 +23,7 @@ class Encumbrance extends Command {
 
     @Override
     public String toString() {
-        return "Show Encumbrance";
+        return "Add Character";
     }
     
 }

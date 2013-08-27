@@ -3,8 +3,8 @@
  * and open the template in the editor.
  */
 
-import lotfpapp.AbilityScores;
-import lotfpapp.CharacterClass;
+import lotfpapp.Character.AbilityScores;
+import lotfpapp.Character.CharacterClass;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
