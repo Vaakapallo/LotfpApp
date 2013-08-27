@@ -4,8 +4,6 @@
  */
 package lotfpapp.Commands;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import lotfpapp.ActiveCharacter;
 import lotfpapp.Character.*;
@@ -30,15 +28,20 @@ public class AddCharacter extends Command {
         io.print("Make character!");
 
         io.print("Character Name:");
-        String character = io.readString();
+        String name = io.readString();
 
         io.print("Player Name");
         String player = io.readString();
 
-//        io.print("Age");
-//        int age = io.readInt();
+        io.print("Age");
+        int age = io.readInt();
+        
+        Char character = new Char(name, player, Alignment.Lawful, age, randomGender(), randomClass());
+        
+        io.print("Total modifier score is: " + character.getAbilityScores().totalModifierScore());
+        
 
-        ActiveCharacter.setActiveCharacter(new Char(character, player, Alignment.Lawful, random.nextInt(200), randomGender(), randomClass()));
+        ActiveCharacter.setActiveCharacter(character);
 
         io.pressEntertoContinue("Character created");
     }

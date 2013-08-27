@@ -42,7 +42,7 @@ public class Char {
 
     @Override
     public String toString() {
-        return name + "\n" + "Player: " + player + "\nLevel: " + level + "\nAlignment: " + alignment + "\nAge: " + age + "\nSex: " + sex + "\nXP: " + XP + "\nClass: " + charClass + "\n" + abilityScores.toString() + "\n" + savingThrows.toString() + "\n" + equipment.toString();
+        return name + "\n" + "Player: " + player + "\nLevel: " + level + "\nAlignment: " + alignment + "\nAge: " + age + "\nSex: " + sex + "\nClass: " + charClass + "\n" + abilityScores.toString() + "\n" + savingThrows.toString() + "\n" + equipment.toString() + "\nXP: " + XP ;
     }
 
     public String getName() {
@@ -51,5 +51,45 @@ public class Char {
 
     public ArrayList<String> getNotes() {
         return notes;
+    }
+
+    public String getPlayer() {
+        return player;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public Alignment getAlignment() {
+        return alignment;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public int getXP() {
+        return XP;
+    }
+
+    public CharacterClass getCharClass() {
+        return charClass;
+    }
+
+    public AbilityScores getAbilityScores() {
+        return abilityScores;
+    }
+
+    public SavingThrows getSavingThrows() {
+        return savingThrows;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
     }
 }

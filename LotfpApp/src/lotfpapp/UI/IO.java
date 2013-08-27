@@ -19,4 +19,6 @@ public interface IO {
     public void print(String text);
     
     public void print(String ... texts);
+    
+    public boolean doesTheUserWant();
 }

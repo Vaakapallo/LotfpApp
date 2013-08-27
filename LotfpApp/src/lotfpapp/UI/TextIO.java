@@ -53,4 +53,10 @@ public class TextIO implements IO{
     public void pressEntertoContinue(String text) {
         System.out.print(text + " <Press enter to continue>"); scanner.nextLine();
     }
+    
+    @Override
+    public boolean doesTheUserWant() {
+        String syote = scanner.nextLine();
+        return syote.matches("(?i).*Y.*");
+    }
 }

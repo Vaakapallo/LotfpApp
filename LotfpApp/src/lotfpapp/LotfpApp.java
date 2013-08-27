@@ -22,7 +22,7 @@ public class LotfpApp {
     public static void main(String[] args) {
         IO io = new TextIO();
 
-        Command[] commands = {new AddCharacter(io), new ShowStats(io), new Notes(io), new Encumbrance(io), new Items(io), new Quit(io)};
+        Command[] commands = {new AddCharacter(io), new RandomizeCharacter(io), new ShowStats(io), new Notes(io), new Encumbrance(io), new Items(io), new Quit(io)};
 
         Menu menu = new Menu(commands);
 
